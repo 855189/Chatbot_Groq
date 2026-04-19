@@ -47,7 +47,7 @@ def history():
 
 if __name__ == "__main__":
     print("\n" + "="*50)
-    print("  🤖 AI Chatbot — Flask + Groq")
+    print("  🤖 AI Chatbot — Flask + Groq + API")
     print("  🌐 Open browser: http://localhost:5000")
     print("  🛑 Press Ctrl+C to stop")
     print("="*50 + "\n")

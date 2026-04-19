@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🤖 AI Chatbot — Flask + Groq + LLaMA3
 
 > A real AI chatbot with a beautiful web UI built with Python Flask + Groq API (FREE).
@@ -175,3 +176,6 @@ git commit -m "test: Add more test cases"
 ---
 
 ⭐ Star this repo if you found it useful!
+=======
+# Chatbot_Groq
+>>>>>>> e4af5f59891572395cf73535f710203801d4202f
