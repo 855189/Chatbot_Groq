@@ -1,0 +1,40 @@
+name: Flask Chatbot CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🐍 Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 📦 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: 🔧 Create test config
+        run: |
+          echo "GROQ_API_KEY = 'paste-your-groq-api-key-here'" > config.py
+          echo "MODEL_NAME = 'llama-3.3-70b-versatile'"        >> config.py
+          echo "SYSTEM_PROMPT = 'You are a helpful assistant.'" >> config.py
+          echo "MAX_HISTORY = 10"                               >> config.py
+          echo "TEMPERATURE = 0.7"                              >> config.py
+
+      - name: 🧪 Run tests
+        run: python test_app.py
+
+      - name: ✅ Done
+        run: echo "🎉 All tests passed!"
